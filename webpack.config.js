@@ -8,13 +8,13 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    entry: path.join(__dirname, "examples/browser/index.ts"),
+    entry: path.join(__dirname, "examples/browser/index.tsx"),
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                use: "babel-loader",
-                exclude: /node_modules/
+                test: /\.(js|jsx|tsx)$/,
+                use: 'babel-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
@@ -27,6 +27,6 @@ module.exports = {
         extensions: [".js", ".jsx", ".ts", ".tsx"]
     },
     devServer: {
-        port: 3001
+        port: 3001,
     }
 };
